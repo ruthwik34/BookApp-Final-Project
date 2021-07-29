@@ -1,0 +1,79 @@
+<h1 style="text-align: center;">Books</h1>
+<div class="dropdown text-center">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Sort by
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="/books/sort/title">title(asc)</a>
+        <a class="dropdown-item" href="/books/sort/-title">title(desc)</a>
+        <a class="dropdown-item" href="/books/sort/release_date">release date(asc)</a>
+        <a class="dropdown-item" href="/books/sort/-release_date">release date(desc)</a>
+        <a class="dropdown-item" href="/books/sort/read_counter">read counter(asc)</a>
+        <a class="dropdown-item" href="/books/sort/-read_counter">read counter(desc)</a>
+    </div>
+</div>
+
+
+
+<!-- <div *ngFor="let book of BookList">
+
+    <div class="card text-center">
+        <div class="card-body">
+            <h2 class="card-title">{{book.title}}</h2>
+            <p class="card-text">{{book.description}}</p>
+            <h5>Release Date :
+                {{book.release_date}}
+            </h5>
+            <h5>Total No.of Reads : {{book.read_counter}}</h5>
+            <a [routerLink]="['/books',book.id]" class="btn btn-primary">Read this book</a>
+        </div>
+    </div>
+</div> -->
+
+<div *ngFor="let book of tempBookList">
+    <!-- {{book.item1}}
+    {{book.item2}}
+    {{book.item3}} -->
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">{{book.item1.title}}</h2>
+                    <p class="card-text">{{book.item1.description}}</p>
+                    <h5>Release Date :
+                        {{book.item1.release_date}}
+                    </h5>
+                    <h5>Total No.of Reads : {{book.item1.read_counter}}</h5>
+                    <a [routerLink]="['/books',book.item1.id]" class="btn btn-primary">Read this book</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">{{book.item2.title}}</h2>
+                    <p class="card-text">{{book.item2.description}}</p>
+                    <h5>Release Date :
+                        {{book.item2.release_date}}
+                    </h5>
+                    <h5>Total No.of Reads : {{book.item2.read_counter}}</h5>
+                    <a [routerLink]="['/books',book.item2.id]" class="btn btn-primary">Read this book</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">{{book.item3.title}}</h2>
+                    <p class="card-text">{{book.item3.description}}</p>
+                    <h5>Release Date :
+                        {{book.item3.release_date}}
+                    </h5>
+                    <h5>Total No.of Reads : {{book.item3.read_counter}}</h5>
+                    <a [routerLink]="['/books',book.item3.id]" class="btn btn-primary">Read this book</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

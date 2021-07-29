@@ -1,0 +1,32 @@
+<h1 style="text-align: center;">Books</h1>
+<div class="dropdown text-center">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Sort by
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="/books/sort/title">title(asc)</a>
+        <a class="dropdown-item" href="/books/sort/-title">title(desc)</a>
+        <a class="dropdown-item" href="/books/sort/release_date">release date(asc)</a>
+        <a class="dropdown-item" href="/books/sort/-release_date">release date(desc)</a>
+        <a class="dropdown-item" href="/books/sort/read_counter">read counter(asc)</a>
+        <a class="dropdown-item" href="/books/sort/-read_counter">read counter(desc)</a>
+    </div>
+</div>
+
+
+
+<div *ngFor="let book of BookList">
+
+    <div class="card text-center">
+        <div class="card-body">
+            <h2 class="card-title">{{book.title}}</h2>
+            <p class="card-text">{{book.description}}</p>
+            <h5>Release Date :
+                {{book.release_date}}
+            </h5>
+            <h5>Total No.of Reads : {{book.read_counter}}</h5>
+            <a [routerLink]="['/books',book.id]" class="btn btn-primary">Read this book</a>
+        </div>
+    </div>
+</div>
